@@ -79,7 +79,7 @@ class ProfileRestControllerTest extends AbstractControllerTest {
                 .andDo(print())
                 .andExpect(status().isNoContent());
 
-        assertMatch(userService.getByEmail("xxx@email.com"), updated);
+        assertMatch(userService.getByEmail("xxx@mail.com"), updated);
     }
 
     @Test
@@ -98,7 +98,7 @@ class ProfileRestControllerTest extends AbstractControllerTest {
     @Test
     @Transactional(propagation = Propagation.NEVER)
     void updateDuplicate() throws Exception {
-        UserTo updatedTo = new UserTo(null, "newName", "admin@email.com", "newPassword");
+        UserTo updatedTo = new UserTo(null, "newName", "admin@mail.com", "newPassword");
 
         mockMvc.perform(MockMvcRequestBuilders.put(REST_URL).contentType(MediaType.APPLICATION_JSON)
                 .with(TestUtil.userHttpBasic(UserTestData.USER))
