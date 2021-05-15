@@ -14,14 +14,6 @@ public class ErrorInfo {
         this.detail = detail;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     public ErrorType getType() {
         return type;
     }
@@ -30,11 +22,5 @@ public class ErrorInfo {
         this.type = type;
     }
 
-    public String[] getDetail() {
-        return detail;
-    }
 
-    public void setDetail(String... detail) {
-        this.detail = detail;
-    }
 }
